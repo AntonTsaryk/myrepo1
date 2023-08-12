@@ -1,0 +1,35 @@
+
+
+{% for job in object_list %}
+Користувач:
+    {{ job.client }}     <a href="www.google.com"> <b>Зайти на профіль {{ job.client }}а </b> <a/>
+{% endfor %}
+
+
+<br/>
+<br/>
+<br/>
+
+Має таку потребу:
+
+<br/>
+<br/>
+<br/>
+
+{% for job in object_list %}
+    {{ job.title }}
+    {{ job.description }}
+    {{ job.company }}
+    {{ job.location }}
+    {{ job.salary }}
+    {{ job.type }}
+    {{ job.category }}
+    {{ job.experience }}
+    {{ job.education }}
+    {{ job.posted_on }}
+    {{ job.last_date}}
+{% endfor %}
+<br/>
+<br/>
+<br/>
+За цю послугу {% for job in object_list %} {{ job.client }} дає  таку винагороду: {{ job.price_estimation }} {% endfor %}

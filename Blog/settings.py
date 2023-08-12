@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path, os
-#asasasdasdafafe
+# asasasdasdafafe
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-cf@_p7y#zx*2h%!qsr&2d68&zcb3xojaa0sj9_(cs9rwrrym^o
 DEBUG = True
 
 ALLOWED_HOSTS = []
-a = 10
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,10 +35,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storis',
     'authentication',
+    'rest_framework',
+    'api',
+
 ]
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
+    ],
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -100,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL = 'api.User'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
