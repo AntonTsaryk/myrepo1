@@ -1,4 +1,4 @@
-from msilib.schema import ListView
+from django.views.generic.list import ListView
 from django.shortcuts import render
 from .models import Post
 from django.views.generic import ListView, CreateView
